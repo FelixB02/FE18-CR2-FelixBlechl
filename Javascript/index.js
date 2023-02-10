@@ -62,7 +62,7 @@ let final_array = JSON.parse(array);
 
 for (let count of final_array) {
     document.getElementById("result").innerHTML += `
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="hello">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 cardcont" id="hello">
     <div class="card  mb-2" style="width: 24rem;" id=""card>
     <button type="button" class="btn btn-info btn-sm" style="width: 6vh; margin: 1vh; color: white;">Task</button>
     <img class="cardimage" src="${count.image}" class="card-img-top" alt="${count.taskname}">
@@ -74,8 +74,8 @@ for (let count of final_array) {
      <p class="btn btn-success increase">${count.importance}</p>
      <p> Deadline: ${ count.deadline}</p>
      <hr>
-     <p class="btn btn-danger float-end ms-2 ">Delete</p>
-     <p class="btn btn-success float-end ">Done</p>
+     <p class="btn btn-danger float-end ms-2 delete">Delete</p>
+     <p class="btn btn-success float-end done">Done</p>
     </div>
     </div>
     </div>`;
@@ -100,5 +100,21 @@ for (let i = 0; i < buttons.length; i++) {
             document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
             document.getElementsByClassName("increase")[i].classList.add("btn-danger");
         }
+    })
+}
+
+let remove = document.getElementsByClassName("delete");
+
+for (let i = 0; i < remove.length; i++) {
+    remove[i].addEventListener("click", function() {
+        document.getElementsByClassName("cardcont")[i].style.display = "none";
+    })
+}
+
+let finish = document.getElementsByClassName("done");
+
+for (let i = 0; i < finish.length; i++) {
+    finish[i].addEventListener("click", function() {
+        document.getElementsByClassName("card")[i].style.backgroundColor = "lightgreen";
     })
 }
