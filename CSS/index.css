@@ -30,4 +30,10 @@
 
 #footer {
   margin-top: 3vh;
+}
+
+#hello {
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */
