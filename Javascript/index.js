@@ -62,15 +62,15 @@ let final_array = JSON.parse(array);
 
 for (let count of final_array) {
     document.getElementById("result").innerHTML += `
-    <div>
-    <div class="card mb-3" style="width: 24rem;">
-    <button type="button" class="btn btn-info btn-sm" style="width: 8vh; margin: 1vh; color: white;">Task</button>
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div class="card  mb-2" style="width: 18rem;">
+    <button type="button" class="btn btn-info btn-sm" style="width: 6vh; margin: 1vh; color: white;">Task</button>
     <img class="cardimage" src="${count.image}" class="card-img-top" alt="${count.taskname}">
     <div class="card-body">
      <h5 class="card-title text-center">${count.taskname}</h5>
      <p class="text-center">${count.description}</p>
      <hr>
-     <p> &#9888;Priority Level:</p>
+     &#9888;Priority Level:
      <p class="btn btn-success increase">${count.importance}</p>
      <p> Deadline: ${ count.deadline}</p>
      <hr>
@@ -88,14 +88,17 @@ for (let i = 0; i < buttons.length; i++) {
         final_array[i].importance++;
         document.getElementsByClassName("increase")[i].innerHTML = final_array[i].importance;
         if (final_array[i].importance <= 1) {
-            document.getElementsByClassName("increase")[i].style.backgroundColor = "#008000"
-            document.getElementsByClassName("increase")[i].style.borderColor = "#008000"
+            document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
+            document.getElementsByClassName("increase")[i].classList.add("btn-success");
         } else if (final_array[i].importance <= 3) {
-            document.getElementsByClassName("increase")[i].style.backgroundColor = "#a98307"
-            document.getElementsByClassName("increase")[i].style.borderColor = "#a98307"
+            document.getElementsByClassName("increase")[i].classList.remove("btn-success");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
+            document.getElementsByClassName("increase")[i].classList.add("btn-warning");
         } else if (final_array[i].importance <= 5) {
-            document.getElementsByClassName("increase")[i].style.backgroundColor = "#B22222"
-            document.getElementsByClassName("increase")[i].style.borderColor = "#B22222"
+            document.getElementsByClassName("increase")[i].classList.remove("btn-success");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
+            document.getElementsByClassName("increase")[i].classList.add("btn-danger");
         }
     })
 }
