@@ -63,7 +63,7 @@ let final_array = JSON.parse(array);
 for (let count of final_array) {
     document.getElementById("result").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="hello">
-    <div class="card  mb-2" style="width: 18rem;" id=""card>
+    <div class="card  mb-2" style="width: 24rem;" id=""card>
     <button type="button" class="btn btn-info btn-sm" style="width: 6vh; margin: 1vh; color: white;">Task</button>
     <img class="cardimage" src="${count.image}" class="card-img-top" alt="${count.taskname}">
     <div class="card-body">
