@@ -1,3 +1,4 @@
+// creating array with JSON
 let array = `
 [{
     "taskname": "Shopping",
@@ -54,12 +55,12 @@ let array = `
     "deadline": "12.02.2023",
     "importance": "0"
 }]`
+
+// Transforming JSON to array of Objekts
 let final_array = JSON.parse(array);
 
 
-
-
-
+// Printing the different Tasks in the HTML
 for (let count of final_array) {
     document.getElementById("result").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 cardcont" id="hello">
@@ -81,12 +82,15 @@ for (let count of final_array) {
     </div>`;
 }
 
+// Creating the function to add importance and change the colors
 let buttons = document.getElementsByClassName("increase");
+
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
         final_array[i].importance++;
         document.getElementsByClassName("increase")[i].innerHTML = final_array[i].importance;
+        // Styling the different Button Colors
         if (final_array[i].importance <= 1) {
             document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
             document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
@@ -103,6 +107,7 @@ for (let i = 0; i < buttons.length; i++) {
     })
 }
 
+// Creating a function to delete elements
 let remove = document.getElementsByClassName("delete");
 
 for (let i = 0; i < remove.length; i++) {
@@ -111,6 +116,7 @@ for (let i = 0; i < remove.length; i++) {
     })
 }
 
+// Creating a function to style Elements which are done
 let finish = document.getElementsByClassName("done");
 
 for (let i = 0; i < finish.length; i++) {

@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Importing Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Importing my CSS -->
     <link rel="stylesheet" href="CSS/index.css">
+    <!-- Importing font awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <!-- Navbar imported from Bootstrap -->
     <div id="navbar">
         <div class="text-center text-dark p-3 border border-dark" style="background-color: rgba(0, 0, 0, 0.2);">
             <nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
@@ -19,7 +23,7 @@
                     <a class="navbar-brand" href="#">My weekly Planner</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -40,9 +44,11 @@
             </nav>
         </div>
     </div>
+    <!-- Hero Image under Navbar -->
     <div id="hero">
         <img src="Pictures/100013641-calendar_fall.jpg" alt="">
     </div>
+    <!-- Text and Sort Button -->
     <div id="headertext">
         <h3>Weekly Tasks</h3>
         <span>
@@ -50,11 +56,14 @@
             <a class="btn btn-outline-secondary" href="#" role="button">Sort</a>
         </span>
     </div>
+    <!-- Grid container for the cards content -->
     <div class="container">
         <div class="row" id="result"></div>
     </div>
+    <!-- Footer -->
     <div id="footer">
         <footer class="text-center text-white" style="background-color: #f1f1f1;">
+            <!-- Icons for the different social media -->
             <div class="container pt-4">
                 <section class="mb-4">
                     <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fa fa-facebook-f"></i></a>
@@ -70,6 +79,7 @@
                     <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fa fa-github"></i></a>
                 </section>
             </div>
+            <!-- Input field for the newsletter -->
             <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 <div id="footercon">
                     <p>Sign up for our newsletter </p>
@@ -77,6 +87,7 @@
                     <a class="btn btn-outline-secondary" href="#" role="button">Subscribe</a>
                 </div>
             </div>
+            <!-- Copyright information -->
             <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright: Felix Blechl
             </div>
@@ -84,8 +95,9 @@
     </div>
 
 
-
+    <!-- Importing my Javascript file -->
     <script src="/Javascript/index.js"></script>
+    <!-- Importing bootstrap Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 

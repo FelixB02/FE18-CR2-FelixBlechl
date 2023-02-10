@@ -1,3 +1,4 @@
+// Styling hero image section
 #hero {
     position: relative;
     overflow: hidden;
@@ -9,6 +10,7 @@
     }
 }
 
+// Styling Text under hero image
 #headertext {
     display: flex;
     justify-content: space-around;
@@ -16,6 +18,7 @@
     margin-bottom: 3vh;
 }
 
+// Styling Input in the footer
 #footercon {
     display: flex;
     justify-content: center;
@@ -32,6 +35,7 @@
     margin-top: 3vh;
 }
 
+// Styling the div elements which contain the cards
 #hello {
     margin-left: 0;
     display: flex;
