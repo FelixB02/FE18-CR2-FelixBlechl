@@ -132,7 +132,7 @@ sorter.addEventListener("click", sorter2)
 
 // Defining the function to sort the items
 function sorter2() {
-    final_array.sort((a, b) => a.importance - b.importance);
+    final_array.sort((a, b) => b.importance - a.importance);
     console.log(final_array)
         // Deleting the old content
     document.getElementById("result").innerHTML = "";
