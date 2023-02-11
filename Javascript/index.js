@@ -125,15 +125,18 @@ for (let i = 0; i < finish.length; i++) {
     })
 }
 
+// Adding the onclick sorter to Sort Items
 let sorter = document.getElementById("sort")
 
 sorter.addEventListener("click", sorter2)
 
-
+// Defining the function to sort the items
 function sorter2() {
     final_array.sort((a, b) => a.importance - b.importance);
     console.log(final_array)
+        // Deleting the old content
     document.getElementById("result").innerHTML = "";
+    // Printing the new sorted Array again
     for (let count of final_array) {
         document.getElementById("result").innerHTML += `
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 cardcont" id="hello">
@@ -155,8 +158,8 @@ function sorter2() {
         </div>`;
     }
 
+    // Reasigning the function for the increase of the importance
     let buttons = document.getElementsByClassName("increase");
-
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
@@ -176,6 +179,24 @@ function sorter2() {
                 document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
                 document.getElementsByClassName("increase")[i].classList.add("btn-danger");
             }
+        })
+    }
+
+    // Reasigning the function for the Removal of an exercise
+    let remove = document.getElementsByClassName("delete");
+
+    for (let i = 0; i < remove.length; i++) {
+        remove[i].addEventListener("click", function() {
+            document.getElementsByClassName("cardcont")[i].style.display = "none";
+        })
+    }
+
+    // Reasigning the function for the finishing of an exercise
+    let finish = document.getElementsByClassName("done");
+
+    for (let i = 0; i < finish.length; i++) {
+        finish[i].addEventListener("click", function() {
+            document.getElementsByClassName("card")[i].style.backgroundColor = "lightgreen";
         })
     }
 }
