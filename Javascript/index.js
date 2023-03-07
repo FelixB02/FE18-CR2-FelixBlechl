@@ -88,7 +88,9 @@ let buttons = document.getElementsByClassName("increase");
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
-        final_array[i].importance++;
+        if (final_array[i].importance != 5) {
+            final_array[i].importance++;
+        }
         document.getElementsByClassName("increase")[i].innerHTML = final_array[i].importance;
         // Styling the different Button Colors
         if (final_array[i].importance <= 1) {
@@ -162,6 +164,19 @@ function sorter2() {
     let buttons = document.getElementsByClassName("increase");
 
     for (let i = 0; i < buttons.length; i++) {
+        if (final_array[i].importance <= 1) {
+            document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
+            document.getElementsByClassName("increase")[i].classList.add("btn-success");
+        } else if (final_array[i].importance <= 3) {
+            document.getElementsByClassName("increase")[i].classList.remove("btn-success");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
+            document.getElementsByClassName("increase")[i].classList.add("btn-warning");
+        } else if (final_array[i].importance <= 5) {
+            document.getElementsByClassName("increase")[i].classList.remove("btn-success");
+            document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
+            document.getElementsByClassName("increase")[i].classList.add("btn-danger");
+        }
         buttons[i].addEventListener("click", function() {
             final_array[i].importance++;
             document.getElementsByClassName("increase")[i].innerHTML = final_array[i].importance;
@@ -174,10 +189,12 @@ function sorter2() {
                 document.getElementsByClassName("increase")[i].classList.remove("btn-success");
                 document.getElementsByClassName("increase")[i].classList.remove("btn-danger");
                 document.getElementsByClassName("increase")[i].classList.add("btn-warning");
-            } else {
+            } else if (final_array[i].importance <= 5) {
                 document.getElementsByClassName("increase")[i].classList.remove("btn-success");
                 document.getElementsByClassName("increase")[i].classList.remove("btn-warning");
                 document.getElementsByClassName("increase")[i].classList.add("btn-danger");
+            } else if (final_array[i].importance > 5) {
+                document.getElementsByClassName("increase")[i].disabled = true;
             }
         })
     }
