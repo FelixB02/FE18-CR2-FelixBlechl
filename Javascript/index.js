@@ -178,7 +178,9 @@ function sorter2() {
             document.getElementsByClassName("increase")[i].classList.add("btn-danger");
         }
         buttons[i].addEventListener("click", function() {
-            final_array[i].importance++;
+            if (final_array[i].importance != 5) {
+                final_array[i].importance++;
+            }
             document.getElementsByClassName("increase")[i].innerHTML = final_array[i].importance;
             // Styling the different Button Colors
             if (final_array[i].importance <= 1) {
